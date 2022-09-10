@@ -7,7 +7,7 @@ import {
 import Filesystem from "./filesystem";
 import GitlabLoader from "./gitlab-loader";
 import gitlabIcon from "./assets/gitlab-icon.svg";
-import { GitlabProject, ProjectIssue } from "./project";
+import { GitlabProject, ProjectIssue } from "./model/project";
 
 export default class GitlabIssuesPlugin extends Plugin {
   settings: GitlabIssuesSettings;

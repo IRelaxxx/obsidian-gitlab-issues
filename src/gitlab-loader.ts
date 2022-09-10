@@ -1,9 +1,9 @@
 import GitlabApi from "./gitlab-api";
-import { GitlabIssue, Issue } from "./issue";
+import { GitlabIssue, Issue } from "./model/issue";
 import { App } from "obsidian";
 import { GitlabIssuesSettings } from "./settings";
-import { Project } from "./project";
-import { Label } from "./label";
+import { Project } from "./model/project";
+import { Label } from "./model/label";
 
 export default class GitlabLoader {
   private settings: GitlabIssuesSettings;

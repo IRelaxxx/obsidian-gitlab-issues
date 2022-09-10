@@ -1,9 +1,9 @@
-import { GitlabIssue } from "./issue";
+import { GitlabIssue } from "./model/issue";
 import { Vault, TFile, TAbstractFile, TFolder } from "obsidian";
 import { GitlabIssuesSettings } from "./settings";
 import { compile } from "handlebars";
-import { GitlabProject, Project } from "./project";
-import { Label } from "./label";
+import { GitlabProject, Project } from "./model/project";
+import { Label } from "./model/label";
 
 export default class Filesystem {
   private vault: Vault;
@@ -161,7 +161,7 @@ export default class Filesystem {
   private issueTemplateLocation(): string {
     const defaultTemplate =
       app.vault.configDir +
-      "/plugins/obsidian-gitlab-issues/src/default-issue-template.md.hb";
+      "/plugins/obsidian-gitlab-issues/src/templates/default-issue-template.md.hb";
 
     if (this.settings.templateFile.length) {
       return this.settings.templateFile;
@@ -173,7 +173,7 @@ export default class Filesystem {
   private projectTemplateLocation(): string {
     const defaultTemplate =
       app.vault.configDir +
-      "/plugins/obsidian-gitlab-issues/src/default-project-template.md.hb";
+      "/plugins/obsidian-gitlab-issues/src/templates/default-project-template.md.hb";
 
     if (this.settings.templateFile.length) {
       return this.settings.templateFile;
@@ -185,7 +185,7 @@ export default class Filesystem {
   private labelTemplateLocation(): string {
     const defaultTemplate =
       app.vault.configDir +
-      "/plugins/obsidian-gitlab-issues/src/default-label-template.md.hb";
+      "/plugins/obsidian-gitlab-issues/src/templates/default-label-template.md.hb";
 
     if (this.settings.templateFile.length) {
       return this.settings.templateFile;
@@ -197,7 +197,7 @@ export default class Filesystem {
   private labelIndexTemplateLocation(): string {
     const defaultTemplate =
       app.vault.configDir +
-      "/plugins/obsidian-gitlab-issues/src/default-label-index-template.md.hb";
+      "/plugins/obsidian-gitlab-issues/src/templates/default-label-index-template.md.hb";
 
     if (this.settings.templateFile.length) {
       return this.settings.templateFile;
